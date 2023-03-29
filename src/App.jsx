@@ -4,6 +4,13 @@ import viteLogo from '/vite.svg'
 import image1 from './images/self.jpg'
 import image2 from './images/self2.jpg'
 import image3 from './images/self3.jpg'
+import image4 from './images/self4.jpg'
+import image5 from './images/self5.jpg'
+import image6 from './images/self6.jpg'
+import image7 from './images/self7.jpg'
+import image8 from './images/self8.jpg'
+import image9 from './images/group1.jpg'
+import image10 from './images/group2.jpg'
 import './App.css'
 import Header from './components/Header/Header'
 import Shop from './components/Shop/Shop'
@@ -13,7 +20,14 @@ function App() {
   const images = [
     {src: image1, alt: "Example Image 1"},
     {src: image2, alt: "Example Image 2"},
-    {src: image3, alt: "Example Image 3"}
+    {src: image3, alt: "Example Image 3"},
+    {src: image4, alt: "Example Image 3"},
+    {src: image5, alt: "Example Image 3"},
+    {src: image6, alt: "Example Image 3"},
+    {src: image7, alt: "Example Image 3"},
+    {src: image8, alt: "Example Image 3"},
+    {src: image9, alt: "Example Image 3"},
+    {src: image10, alt: "Example Image 3"},
   ];
   const [count, setCount] = useState(0);
   const [showImage, setShowImage] = useState(false);
@@ -26,7 +40,7 @@ function App() {
 
     const interval = setInterval(() => {
       setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -43,7 +57,7 @@ function App() {
       {showImage && (
         <div className="popup">
           <button onClick={handleClose}>X</button>
-          <img src={images[imageIndex].src} alt={images[imageIndex].alt} />
+          <div className='popup-img'><img src={images[imageIndex].src} alt={images[imageIndex].alt} /></div>
         </div>
       )}
       <Header></Header>
